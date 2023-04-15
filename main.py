@@ -3,12 +3,17 @@ import os.path
 
 
 # -----------------Functions----------------- #
-def delete_empty_lines(input_list):
+# This function is used to delete n (lines_to_remove) lines of a list
+def delete_empty_lines(input_list, lines_to_remove):
+    # Make a cope of input list
     list_without_empty_lines = input_list.copy()
 
-    list_without_empty_lines.pop(0)
-    list_without_empty_lines.pop(0)
+    # Remove n numbers of string from the copy of the list
+    for i in range(lines_to_remove):
+        list_without_empty_lines.pop(0)
+        list_without_empty_lines.pop(0)
 
+    # Return modified list
     return list_without_empty_lines
 
 
@@ -183,7 +188,7 @@ def list_of_lists_to_list_of_strings(input_list):
     return list_with_strings_out
 
 
-def main(in_path_to_folder="E:/Python_Projects/PyCharm_Projects/Text_Work/Converter/files_to_transform/0390.txt",
+def main(in_path_to_folder="E:/Python_Projects/PyCharm_Projects/Converter/files_to_transform/0390.txt",
          in_color=(255, 255, 255)):
     # -----------------Variables----------------- #
     list_original = []
@@ -208,7 +213,7 @@ def main(in_path_to_folder="E:/Python_Projects/PyCharm_Projects/Text_Work/Conver
         list_original.append(line)
 
     # -----------------Delete_1st_and_2nd_Columns----------------- #
-    list_only_data = delete_empty_lines(list_original)
+    list_only_data = delete_empty_lines(list_original, 1)
 
     # -----------------Nums_of_Columns----------------- #
     number_of_rows = len(list_only_data)
