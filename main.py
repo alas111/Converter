@@ -5,15 +5,11 @@ import os.path
 # -----------------Functions----------------- #
 # This function is used to delete n (lines_to_remove) lines of a list
 def delete_empty_lines(input_list, lines_to_remove):
-    # Make a cope of input list
     list_without_empty_lines = input_list.copy()
 
-    # Remove n numbers of string from the copy of the list
     for i in range(lines_to_remove):
         list_without_empty_lines.pop(0)
-        list_without_empty_lines.pop(0)
 
-    # Return modified list
     return list_without_empty_lines
 
 
